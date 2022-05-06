@@ -1,0 +1,21 @@
+.video {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  
+}
+
+.player {
+  background-color: transparent;
+  background-image: url(assets/player.png);
+  background-position: center center;
+  background-size: contain;
+  border: 0;
+  height: 128px;
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  width: 128px;
+}
