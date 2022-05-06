@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif, 'Segoe UI Emoji', 'Noto Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
