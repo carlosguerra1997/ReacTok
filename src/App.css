@@ -2,6 +2,7 @@
   background: #000;
   display: grid;
   height: 100vh;
+  overflow: hidden;
   place-content: center;
 }
 
