@@ -1,5 +1,5 @@
 export const Heart = ({ fill = 'currentColor' }) => (
-  <svg width='56' height='56' viewBox='8 8 40 40' fill='none'>
+  <svg width='45' height='45' viewBox='8 8 40 40' fill='none'>
     <path
       fillRule='evenodd' clipRule='evenodd' d='M20.5 11.75C25.5 11.75
     28 15.0833 28 15.0833C28 15.0833 30.5 11.75 35.5 11.75C41.3333 11.75 45.5
