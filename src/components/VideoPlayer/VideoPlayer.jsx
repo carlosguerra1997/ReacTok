@@ -1,6 +1,8 @@
-import { useRef, useState } from 'react'
 import './VideoPlayer.css'
+import { useRef, useState } from 'react'
 import clsx from 'clsx'
+
+import { VideoPlayerActions } from './VideoPlayerActions'
 
 export const VideoPlayer = ({ src }) => {
   const [playing, setPlaying] = useState(false)
@@ -27,6 +29,7 @@ export const VideoPlayer = ({ src }) => {
         src={src}
       />
       <i className={playerClassName} onClick={handlePlaying} />
+      <VideoPlayerActions />
     </div>
 
   )
