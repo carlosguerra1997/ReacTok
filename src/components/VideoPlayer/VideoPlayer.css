@@ -23,3 +23,17 @@
 .hidden {
   opacity: 0;
 }
+
+.actions {
+  bottom: 128px;
+  position: absolute;
+  right: 16px;
+}
+
+.action {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
