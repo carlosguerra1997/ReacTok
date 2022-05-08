@@ -1,0 +1,74 @@
+.footer {
+  align-items: flex-end;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  background: linear-gradient(0deg, rgba(0,0,0,0.58), rgba(255,255,255,0) 60%);
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.text-wrapper {
+  max-width: 275px;
+}
+
+.album {
+  align-items: center;
+  animation: rotate 4s infinite linear;
+  background: url('/assets/album.svg');
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.album-cover {
+  border-radius: 100%;
+  height: 32px;
+  overflow: hidden;
+  width: 32px;
+}
+
+.author {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+.music {
+  background-image: url('/assets/music.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
+  height: 15px;
+  padding-right: 20px;
+  width: 15px;
+}
+
+.song {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}

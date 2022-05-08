@@ -11,7 +11,7 @@ const VIDEOS = [
     shares: 111,
     comments: '23',
     songName: 'Una cancion cualquiera',
-    albumCover: '',
+    albumCover: 'https://350927.smushcdn.com/1388247/wp-content/uploads/2020/11/Unknown-Album-Cover-PP1.jpg?lossy=0&strip=1&webp=1',
     src: 'https://v16-webapp.tiktok.com/2e68f1882b684207652daac791f1797a/6277cac8/video/tos/maliva/tos-maliva-ve-0068c799-us/e76d03eb93024d84ab5e972577c7abf5/?a=1988&br=3550&bt=1775&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=eXd.6HQqMyq8ZlFlmwe2NO3oyl7Gb&l=2022050807503101022308705100D8930E&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2V1Zzk6ZnJuPDMzZzczNEApZjs0MzM8Ozw1N2Y7NWVkZ2c2LmtecjRfbWhgLS1kMS9zc180NV40NTVgYl4tNjBhLzE6Yw%3D%3D&vl=&vr='
   },
   {
