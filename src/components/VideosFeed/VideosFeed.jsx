@@ -1,3 +1,5 @@
+import './VideosFeed.css'
+
 import { VideoPlayer } from '../VideoPlayer/VideoPlayer'
 
 const VIDEOS = [
@@ -28,7 +30,9 @@ const VIDEOS = [
 export const VideosFeed = () => {
   return (
     VIDEOS.map(video => (
-      <VideoPlayer key={video.id} {...video} />
+      <div className='item' key={video.id}>
+        <VideoPlayer {...video} />
+      </div>
     ))
   )
 }
