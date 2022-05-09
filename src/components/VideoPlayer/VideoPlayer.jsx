@@ -5,7 +5,8 @@ import clsx from 'clsx'
 import { VideoPlayerActions } from './VideoPlayerActions'
 import { VideoDescription } from '../VideoDescription/VideoDescription'
 
-export const VideoPlayer = ({ albumCover, username, description, songName, src }) => {
+export const VideoPlayer = ({ albumCover, user, description, songName, src }) => {
+  const { avatar, username } = user
   const [playing, setPlaying] = useState(false)
   const video = useRef()
 
@@ -30,7 +31,7 @@ export const VideoPlayer = ({ albumCover, username, description, songName, src }
         src={src}
       />
       <i className={playerClassName} onClick={handlePlaying} />
-      <VideoPlayerActions />
+      <VideoPlayerActions avatar={avatar} username={username}  />
       <VideoDescription
         albumCover={albumCover}
         username={username}

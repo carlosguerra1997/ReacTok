@@ -2,7 +2,7 @@ import { Comment } from './Icons/Comment'
 import { Heart } from './Icons/Heart'
 import { Share } from './Icons/Share'
 
-export const VideoPlayerActions = ({ comments = 1052, hearted = false, likes = 25623, shares = 762 }) => {
+export const VideoPlayerActions = ({ avatar, comments = 1052, hearted = false, likes = 25623, shares = 762, username }) => {
   const handleLike = () => {
     window.alert('Like')
   }
@@ -17,6 +17,10 @@ export const VideoPlayerActions = ({ comments = 1052, hearted = false, likes = 2
 
   return (
     <aside className='actions'>
+      <div className='user'>
+        <img src={avatar} alt={username} />
+        <img src='../../assets/plus.png' alt={username} />
+      </div>
       <button className='action' onClick={handleLike}>
         <Heart width='45' />
         <span title='likes'>{likes}</span>
