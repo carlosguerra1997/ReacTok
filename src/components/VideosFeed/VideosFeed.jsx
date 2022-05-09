@@ -1,6 +1,9 @@
 import './VideosFeed.css'
 
+import { getVideos } from '../../services/index'
+
 import { VideoPlayer } from '../VideoPlayer/VideoPlayer'
+import { useEffect } from 'react'
 
 const VIDEOS = [
   {
@@ -28,6 +31,11 @@ const VIDEOS = [
 ]
 
 export const VideosFeed = () => {
+  useEffect(() => {
+    getVideos().then(([error, videos]) => {
+      console.log({ error, videos })
+    })
+  })
   return (
     VIDEOS.map(video => (
       <div className='item' key={video.id}>
