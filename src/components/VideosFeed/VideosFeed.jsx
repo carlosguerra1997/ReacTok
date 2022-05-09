@@ -1,6 +1,6 @@
 import './VideosFeed.css'
 
-import { useGetAllVideos } from '../../hooks/get-videos'
+import { useGetAllVideos } from '../../hooks/use-get-videos'
 
 import { VideoPlayer } from '../VideoPlayer/VideoPlayer'
 

@@ -1,7 +1,8 @@
 import './VideoPlayer.css'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 
+import { observer } from '../../config/IntersectionObserver'
 import { VideoPlayerActions } from './VideoPlayerActions'
 import { VideoDescription } from '../VideoDescription/VideoDescription'
 
@@ -9,6 +10,16 @@ export const VideoPlayer = ({ albumCover, user, description, songName, src }) =>
   const { avatar, username } = user
   const [playing, setPlaying] = useState(false)
   const video = useRef()
+
+  useEffect(() => {
+    observer.observe(video.current)
+    video.current._handleIntersect = (isIntersecting) => {
+      const { current: videoEl } = video
+      if (isIntersecting) videoEl.play()
+      isIntersecting ? videoEl.play() : videoEl.pause()
+      setPlaying(!videoEl.paused)
+    }
+  }, [])
 
   const handlePlaying = () => {
     const { current: videoEl } = video
@@ -31,7 +42,7 @@ export const VideoPlayer = ({ albumCover, user, description, songName, src }) =>
         src={src}
       />
       <i className={playerClassName} onClick={handlePlaying} />
-      <VideoPlayerActions avatar={avatar} username={username}  />
+      <VideoPlayerActions avatar={avatar} username={username} />
       <VideoDescription
         albumCover={albumCover}
         username={username}
