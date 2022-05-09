@@ -5,6 +5,7 @@ export const getVideos = async () => {
     .from('videos')
     .select(`*, user: user_id (
       avatar,
+      id,
       username
     )`)
 
