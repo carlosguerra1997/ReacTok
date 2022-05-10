@@ -2,9 +2,12 @@ import './Upload.css'
 import clsx from 'clsx'
 import { useDropzone } from 'react-dropzone'
 
-export const Upload = (e) => {
+import { loadVideo } from '../../services'
+
+export const Upload = (files) => {
   const onDrop = () => {
-    console.log('Drop... ', e)
+    const [file] = files
+    loadVideo({ videoFile: file })
   }
 
   const { isDragAccept, isDragReject, getRootProps, getInputProps } = useDropzone({

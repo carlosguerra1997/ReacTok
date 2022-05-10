@@ -16,11 +16,21 @@
 
 .upload form label {
   display: block;
+  font-weight: bold;
   margin-bottom: 16px;
 }
 
 .upload form > * {
   margin-bottom: 16px;
+}
+
+.upload form input {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: block;
+  line-height: 18px;
+  margin-top: 5px;
+  padding: 4px;
 }
 
 .upload .dropzone p {
