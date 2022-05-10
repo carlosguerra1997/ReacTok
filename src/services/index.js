@@ -1,5 +1,11 @@
 import { supabase } from './supabase'
 
+export const loadVideo = async ({ videoFile }) => {
+  const { data, error } = await supabase.storage
+    .from('videos')
+    .upload('videos/', videoFile)
+}
+
 export const getVideos = async () => {
   const { data, error } = await supabase
     .from('videos')
