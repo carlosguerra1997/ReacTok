@@ -1,20 +1,21 @@
-import { useDropzone } from 'react-dropzone'
 import './Upload.css'
+import clsx from 'clsx'
+import { useDropzone } from 'react-dropzone'
 
 export const Upload = (e) => {
   const onDrop = () => {
     console.log('Drop... ', e)
   }
 
-  const {
-    isDragAccept,
-    isDragReject,
-    getRootProps,
-    getInputProps
-  } = useDropzone({
+  const { isDragAccept, isDragReject, getRootProps, getInputProps } = useDropzone({
     maxFiles: 1,
-    accept: 'video/mp4,video/x-m4v,video/*',
+    accept: { 'video/*': ['.mp4'] },
     onDrop
+  })
+
+  const dropzoneClassnames = clsx('dropzone', {
+    dropzoneReject: isDragReject,
+    dropzoneAccept: isDragAccept
   })
 
   return (
@@ -25,17 +26,10 @@ export const Upload = (e) => {
       <form className='form'>
         <div {...getRootProps()}>
           <input {...getInputProps()} />
-          <div className='dropzone'>
-            <p>Selecciona el video para cargar</p>
-            <p>O arrastra y suelta un archivo</p>
-            <ul>
-              <li>MP4 o WebM</li>
-              <li>Resolución de al menos 720x1280</li>
-              <li>Hasta 180 segundos</li>
-            </ul>
+          <div className={dropzoneClassnames}>
+            {renderDropzoneContent(isDragReject, isDragAccept)}
           </div>
         </div>
-
         <label>
           Leyenda
           <input type='text' placeholder='' />
@@ -44,5 +38,21 @@ export const Upload = (e) => {
         <button>Publicar</button>
       </form>
     </div>
+  )
+}
+
+const renderDropzoneContent = (isDragReject, isDragAccept) => {
+  if (isDragReject) return <h4>Archivo no soportado</h4>
+  if (isDragAccept) return <h4>Suelta el archivo para subirlo</h4>
+  return (
+    <>
+      <p>Selecciona el video para cargar</p>
+      <p>O arrastra y suelta un archivo</p>
+      <ul>
+        <li>MP4 o WebM</li>
+        <li>Resolución de al menos 720x1280</li>
+        <li>Hasta 180 segundos</li>
+      </ul>
+    </>
   )
 }

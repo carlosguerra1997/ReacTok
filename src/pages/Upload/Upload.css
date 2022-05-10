@@ -37,7 +37,7 @@
 
 .dropzone {
   align-items: center;
-  background: #f0f0f0;
+  background: #f4f4f4;
   border-radius: 5px;
   color: #777;
   display: flex;
@@ -46,4 +46,13 @@
   margin-top: 15px;
   justify-content: center;
   padding: 20px 36px;
+  transition: background-color .3s ease;
+}
+
+.dropzoneAccept {
+  background: rgb(221, 255, 202);
+}
+
+.dropzoneReject {
+  background: rgb(255, 202, 202);
 }
